@@ -8,9 +8,14 @@ namespace SOLIDPrinciples.SingleResponsibility.SRP
 {
     public class PresentationSRP
     {
-        DatabaseManager db = new DatabaseManager();
+        //DatabaseManager db = new DatabaseManager();
+        private readonly IDatabaseManager db;
+        public PresentationSRP()
+        {
+            db = new DatabaseManager();
+        }
 
-        public void RegisterCustomer()
+        public void RegisterEmployee()
         {
             try
             {
@@ -25,7 +30,7 @@ namespace SOLIDPrinciples.SingleResponsibility.SRP
                 ShowEmployee();
                 Console.WriteLine("-----------------BEFORE SAVING--------------------");
 
-                db.SaveCustomer(customer);
+                db.SaveEmployee(customer);
 
                 EmailService.SentEmail(customer);
 

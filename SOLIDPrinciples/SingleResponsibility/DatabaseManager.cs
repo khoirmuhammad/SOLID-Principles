@@ -6,17 +6,21 @@ using System.Threading.Tasks;
 
 namespace SOLIDPrinciples.SingleResponsibility
 {
-    public class DatabaseManager
+    public class DatabaseManager : IDatabaseManager
     {
-        Employee emp = new Employee();
+        private readonly IEmployeeData _employeeData;
+        public DatabaseManager()
+        {
+            _employeeData = new EmployeeData();
+        }
         public List<Employee> SelectEmployees()
         {
-            return emp.SelectEmployees();
+            return _employeeData.SelectEmployees();
         }
 
-        public void SaveCustomer(Employee employee)
+        public void SaveEmployee(Employee employee)
         {
-            emp.SaveEmployee(employee);
+            _employeeData.SaveEmployee(employee);
         }
     }
 }

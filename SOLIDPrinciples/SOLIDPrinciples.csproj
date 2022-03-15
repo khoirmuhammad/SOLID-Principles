@@ -43,6 +43,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DependencyInversion\DIP\Customer.cs" />
+    <Compile Include="DependencyInversion\DIP\CustomerBusinessLogic.cs" />
+    <Compile Include="DependencyInversion\DIP\CustomerDataAccess.cs" />
+    <Compile Include="DependencyInversion\DIP\ICustomerDataAccess.cs" />
+    <Compile Include="DependencyInversion\NonDIP\Customer.cs" />
+    <Compile Include="DependencyInversion\NonDIP\CustomerBusinessLogic.cs" />
+    <Compile Include="DependencyInversion\NonDIP\CustomerDataAccess.cs" />
+    <Compile Include="InterfaceSegregation\ISP\EmployeeServiceISP.cs" />
+    <Compile Include="InterfaceSegregation\ISP\IBasicDatabaseOperation.cs" />
+    <Compile Include="InterfaceSegregation\ISP\IBulkInsert.cs" />
+    <Compile Include="InterfaceSegregation\ISP\UserService.cs" />
+    <Compile Include="InterfaceSegregation\NonISP\EmployeeServiceNonISP.cs" />
+    <Compile Include="InterfaceSegregation\NonISP\IDatabaseOperation.cs" />
+    <Compile Include="InterfaceSegregation\NonISP\UserService.cs" />
     <Compile Include="LiskovSubstitution\LSP\BaseSalaryLSP.cs" />
     <Compile Include="LiskovSubstitution\LSP\SeniorDeveloperSalaryLSP.cs" />
     <Compile Include="LiskovSubstitution\NonLSP\BaseSalaryNonLSP.cs" />
@@ -57,6 +71,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SingleResponsibility\Employee.cs" />
     <Compile Include="SingleResponsibility\DatabaseManager.cs" />
+    <Compile Include="SingleResponsibility\EmployeeData.cs" />
+    <Compile Include="SingleResponsibility\IDatabaseManager.cs" />
+    <Compile Include="SingleResponsibility\IEmployeeData.cs" />
     <Compile Include="SingleResponsibility\NonSRP\PresentationNonSRP.cs" />
     <Compile Include="SingleResponsibility\SRP\EmailService.cs" />
     <Compile Include="SingleResponsibility\SRP\PresentationSRP.cs" />

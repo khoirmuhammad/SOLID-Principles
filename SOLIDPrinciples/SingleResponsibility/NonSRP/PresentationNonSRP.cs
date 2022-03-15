@@ -8,13 +8,17 @@ namespace SOLIDPrinciples.SingleResponsibility.NonSRP
 {
     public class PresentationNonSRP
     {
-        DatabaseManager db = new DatabaseManager();
+        private readonly IDatabaseManager db;
+        public PresentationNonSRP()
+        {
+            db = new DatabaseManager();
+        }
 
-        public void RegisterCustomer()
+        public void RegisterEmployee()
         {
             try
             {
-                Employee customer = new Employee
+                Employee employee = new Employee
                 {
                     Id = 1,
                     Name = "Muhammad Khoirudin",
@@ -25,9 +29,9 @@ namespace SOLIDPrinciples.SingleResponsibility.NonSRP
                 ShowEmployee();
                 Console.WriteLine("-----------------BEFORE SAVING--------------------");
 
-                db.SaveCustomer(customer);
+                db.SaveEmployee(employee);
 
-                SentEmail(customer);
+                SentEmail(employee);
 
                 Console.WriteLine("------------------AFTER SAVING-------------------");
                 ShowEmployee();
@@ -46,10 +50,10 @@ namespace SOLIDPrinciples.SingleResponsibility.NonSRP
             }
         }
 
-        private void SentEmail(Employee customer)
+        private void SentEmail(Employee employee)
         {
             Console.WriteLine("Non SRP");
-            Console.WriteLine($"Email To : {customer.Email}");
+            Console.WriteLine($"Email To : {employee.Email}");
             Console.WriteLine("Email sent successfully");
         }
     }
